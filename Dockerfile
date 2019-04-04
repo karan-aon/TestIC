@@ -1,7 +1,5 @@
 FROM debian:jessie-backports
 
-RUN export HTTP_PROXY http://serverproxy.aon.net:8888
-RUN export export HTTPS_PROXY http://serverproxy.aon.net:8888
 RUN export CONTAINER_DIR ${pwd}
 RUN export GRADLE_USER_HOME="${CONTAINER_DIR}/.gradle"
 
