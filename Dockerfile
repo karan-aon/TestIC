@@ -7,7 +7,7 @@ ENV PATH $GRADLE_USER_HOME:$PATH
 
 RUN echo "deb http://ftp.debian.org/debian jessie main" >> /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -t jessie -y openjdk-8-jdk -y
+RUN apt-get install -t jessie -y openjdk -y
 RUN npm install npm@6.4.1 -g
 
 RUN bash -xc "\
