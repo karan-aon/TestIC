@@ -1,4 +1,4 @@
-FROM debian:testing
+FROM debian
 
 RUN export CONTAINER_DIR ${pwd}
 RUN export GRADLE_USER_HOME="${CONTAINER_DIR}/.gradle"
