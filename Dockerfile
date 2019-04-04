@@ -5,9 +5,10 @@ RUN export GRADLE_USER_HOME="${CONTAINER_DIR}/.gradle"
 
 ENV PATH $GRADLE_USER_HOME:$PATH
 
-RUN echo "deb http://ftp.debian.org/debian jessie main" >> /etc/apt/sources.list
+#RUN echo "deb http://ftp.debian.org/debian jessie main" >> /etc/apt/sources.list
+RUN set -ex && echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list.d/jessie-backports.list
 RUN apt-get update
-RUN apt-get install -t jessie -y openjdk -y
+RUN apt-get install --target-release jessie-backports openjdk-8-jre-headless ca-certificates-java -y
 RUN npm install npm@6.4.1 -g
 
 RUN bash -xc "\
