@@ -1,4 +1,5 @@
 FROM debian:stretch
+FROM node:11.9.0
 
 RUN export CONTAINER_DIR ${pwd}
 RUN export GRADLE_USER_HOME="${CONTAINER_DIR}/.gradle"
