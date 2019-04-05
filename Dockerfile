@@ -14,6 +14,8 @@ RUN apt-get -q update && apt-get -y -q install --no-install-recommends -t stretc
 #RUN apt-get install -t stretch-backports openjdk-8-jdk -y
 RUN npm install npm@6.4.1 -g
 
+WORKDIR source-code
+
 RUN bash -xc "\
 pushd source-code; \
 create-build.sh; \
